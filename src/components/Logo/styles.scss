@@ -1,0 +1,15 @@
+@import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
+
+.logo-component {
+  display: inline-block;
+  color: $color-white;
+  width: 25vw;
+  height: 25vw;
+  position: relative;
+}
+
+.logo-intro {
+  width: 90%;
+  @include centerXY;
+}

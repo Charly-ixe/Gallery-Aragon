@@ -1,0 +1,48 @@
+@import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
+
+.top-menu-component {
+  // display: inline-block;
+  width: 100vw;
+  height: 10rem;
+  background: url('/images/toiles-paradoxales.png') no-repeat center;
+  background-size: 8rem;
+  background-color: $color-black-alpha;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-menu-burger-menu {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  cursor: pointer;
+  z-index: 10000;
+  &:hover {
+	li:first-child {
+		width: 25px;
+	}
+  }
+}
+
+.top-menu-burger-element {
+  width: 25px;
+  height: 4px;
+  background-color: $color-white;
+  transition: all 0.3s ease;
+  &:first-child {
+	width: 15px;
+  }
+  &:nth-child(2n) {
+	margin: 4px 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .top-menu-component {
+	height: 8rem;
+	background-size: 6rem;
+  }
+}

@@ -1,0 +1,36 @@
+@import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
+
+.events {
+  text-align: center;
+  color: $color-white;
+  overflow-x: hidden;
+  overflow: auto;
+  position: relative;
+
+  .events-title {
+	  margin-top: 25vh;
+	  text-align: center;
+  }
+
+  .events-video-container {
+    margin-top: 3vh;
+	width: 60vw;
+	@include centerX;
+	position: relative;
+	video {
+		width: 100%;
+	}
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .events {
+	.events-title {
+      margin-top: 20vh;
+	}
+	.events-video-container {
+      width: 90vw;
+	}
+  }
+}

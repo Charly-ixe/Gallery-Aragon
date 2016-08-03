@@ -1,0 +1,21 @@
+<div class="info-painting">
+	<div class="info-painting-close" v-on:click="closePaintingInfo"></div>
+	<div class="info-painting-wrapper">
+			<img v-bind:src="currentPainting.image" alt="" class="info-painting-image" v-el:paintingimage />
+			<div class="info-painting-details" v-el:paintingdetails>
+				<p class="info-painting-details-title details">
+					{{ currentPainting.title }}
+				</p>
+				<p class="details">
+					{{ currentPainting.description }}
+				</p>
+				<p class="details">
+					{{ currentPainting.dimensions }}
+				</p>
+				<p class="details">
+					{{ currentPainting.date }}
+				</p>
+			</div>
+	</div>
+	<navigation-component></navigation-component>
+</div>

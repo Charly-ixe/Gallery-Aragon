@@ -1,0 +1,26 @@
+<div class="sidebar-component" v-show="isOpen" transition="toggle-sidebar">
+	<div class="sidebar-menu-container">
+		<ul class="sidebar-menu">
+			<li v-link-active class="sidebar-menu-item">
+				<a href="#" v-link="{ name: 'gallery'}">Galerie</a>
+			</li>
+			<li v-link-active class="sidebar-menu-item">
+				<a href="#" v-link="{ name: 'about'}">À propos</a>
+			</li>
+			<li v-link-active class="sidebar-menu-item">
+				<a href="#" v-link="{ name: 'events'}">Événements</a>
+			</li>
+			<li v-link-active class="sidebar-menu-item">
+				<a href="#" v-link="{ path: '/press', exact: true }">Presse</a>
+			</li>
+		</ul>
+		<div class="sidebar-contact">
+			<p>
+				Joseph Aragon
+			</p>
+			<p>
+				joseph.aragon555@gmail.com
+			</p>
+		</div>
+	</div>
+</div>

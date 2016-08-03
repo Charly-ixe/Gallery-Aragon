@@ -1,0 +1,53 @@
+@import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
+
+.about {
+  text-align: center;
+  color: $color-white;
+  overflow-x: hidden;
+  overflow: auto;
+
+  .about-title {
+	  margin-top: 25vh;
+	  text-align: center;
+  }
+  .about-profile-img {
+	width: 25%;
+	position: relative;
+  }
+
+  .about-text-container {
+    margin-top: 7vh;
+	width: 60vw;
+	@include centerX;
+	position: relative;
+    .about-text {
+	  padding: 0 6vw;
+      font-size: 1.3em;
+	  text-align: justify;
+	  line-height: 1.2em;
+
+	  .about-text-headline {
+		  font-size: 1.4em;
+		  font-weight: bold;
+		  margin-bottom: 4rem;
+	  }
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .about {
+	.about-title {
+      margin-top: 20vh;
+    }
+	.about-profile-img {
+	  width: 80vw;
+	}
+    .about-text-container {
+      width: 90vw;
+    }
+  }
+}

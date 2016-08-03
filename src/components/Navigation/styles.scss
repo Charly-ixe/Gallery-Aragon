@@ -1,0 +1,63 @@
+@import '~stylesheets/common/variables';
+
+.navigation {
+  display: inline-block;
+  margin-top: 3rem;
+  text-transform: uppercase;
+
+  .navigation-prev {
+	position: absolute;
+	left: 10%;
+	top: 50vh;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	&:after {
+	  content: "";
+	  position: absolute;
+	  right: 120%;
+	  top: 30%;
+	  height: 1px;
+	  width: 2vw;
+	  background-color: $color-white;
+	  transition: all 0.3s ease;
+	}
+	&:hover {
+	  &:after {
+		width: 10vw;
+	  }
+	}
+  }
+  .navigation-next {
+	position: absolute;
+	right: 10%;
+	top: 50vh;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	&:after {
+	  content: "";
+	  position: absolute;
+	  left: 120%;
+	  top: 30%;
+	  height: 1px;
+	  width: 2vw;
+	  background-color: $color-white;
+	  transition: all 0.3s ease;
+	}
+	&:hover {
+	  &:after {
+		width: 10vw;
+	  }
+	}
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navigation {
+	.navigation-next {
+	  top: 85vh;
+	}
+	.navigation-prev {
+	  top: 85vh;
+	}
+  }
+}

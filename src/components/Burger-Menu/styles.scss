@@ -1,0 +1,51 @@
+@import '~stylesheets/common/variables';
+
+.burger-menu {
+  position: fixed;
+  right: 3rem;
+  top: 3rem;
+  cursor: pointer;
+  z-index: 10000;
+  height: 20px;
+  width: 25px;
+  &:hover {
+	li:first-child {
+	  width: 25px;
+	}
+  }
+  &.open {
+	li:nth-child(2) {
+      opacity: 0;
+      margin-left: 60px;
+	}
+	li:nth-child(1) {
+      transform: rotate(135deg);
+	  width: 25px;
+	  top: 8px;
+	}
+	li:nth-child(3) {
+      transform: rotate(-135deg);
+	  width: 25px;
+	  top: 8px;
+	}
+  }
+}
+
+.burger-element {
+  width: 25px;
+  position: absolute;
+  height: 4px;
+  background-color: $color-white;
+  transition: all 0.3s ease;
+  &:first-child {
+	width: 15px;
+	top: 0;
+  }
+  &:nth-child(2) {
+	top: 8px;
+  }
+  &:nth-child(3) {
+	top: 16px;
+  }
+
+}

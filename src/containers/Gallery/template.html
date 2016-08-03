@@ -1,0 +1,19 @@
+<div class="gallery">
+	<burger-menu-component></burger-menu-component>
+	<top-menu-component></top-menu-component>
+	<sidebar-component v-el:sidebar></sidebar-component>
+	<div class="gallery-painting-container">
+		<ul v-el:paintinglist>
+			<li class="gallery-painting" v-for="painting in paintings" v-on:click="paintingClick($index)">
+				<div class="gallery-painting-image-container" >
+					<img class="gallery-painting-image" v-bind:src="painting.image" alt="">
+					<div class="gallery-painting-name">
+						{{ painting.title }}
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<info-painting-component v-show="infosOpen" transition="show-details"></info-painting-component>
+	<footer-component></footer-component>
+</div>

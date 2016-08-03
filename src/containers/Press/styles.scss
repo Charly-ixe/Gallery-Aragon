@@ -1,0 +1,61 @@
+@import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
+
+.press {
+  color: $color-white;
+  overflow-x: hidden;
+  overflow: auto;
+  position: relative;
+  // text-align: center;
+
+  .press-title {
+	  margin-top: 25vh;
+	  text-align: center;
+  }
+
+  .press-wrapper {
+	margin-top: 3vh;
+  	width: 60vw;
+  	@include centerX;
+  	position: relative;
+
+	.press-article {
+	  width: 100%;
+	  .press-article-image {
+		width: 40%;
+		margin-left: 10%;
+	  }
+	  .press-article-text {
+		width: 45%;
+		position: absolute;
+		left: 42%;
+		top: 20%;
+		padding: 2vw 2vw 0 2vw;
+		font-size: 1.2em;
+		background-color: $color-grey-alpha;
+		text-align: justify;
+	  }
+	}
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .press {
+	.press-wrapper {
+	  width: 80%;
+	  .press-article {
+		  .press-article-image {
+        	width: 100%;
+			margin-left: 0;
+          }
+          .press-article-text {
+        	width: 100%;
+			left: 0;
+			top: 100%;
+			padding: 7% 0;
+			background-color: $color-black;
+          }
+	  }
+	}
+  }
+}

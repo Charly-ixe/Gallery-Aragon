@@ -1,0 +1,77 @@
+@import '~stylesheets/common/variables';
+@import '~stylesheets/common/mixins';
+
+.gallery {
+  text-align: center;
+  color: $color-white;
+  overflow-x: hidden;
+  overflow: auto;
+
+  .show-details-transition {
+    transition: opacity 0.4s ease;
+  }
+  .show-details-enter {
+	opacity: 0;
+  }
+  .show-details-leave {
+	opacity: 0;
+  }
+}
+
+.gallery-painting-container {
+  width: 70vw;
+  margin-top: 120px;
+  @include centerX;
+  position: relative;
+}
+
+.gallery-painting {
+  display: inline-block;
+  padding: 4vw;
+  width: 20vw;
+  height: 20vw;
+  color: $color-white;
+}
+
+.gallery-painting-image-container {
+  background-color: $color-grey;
+  position: relative;
+  height: 12vw; //temporaire
+  cursor: pointer;
+  .gallery-painting-image {
+	  width: 100%;
+  }
+  .gallery-painting-name {
+    position: absolute;
+	left: -3vw;
+	top: 4vw;
+	font-size: 1.6em;
+	opacity: 0;
+	padding: 1.5rem;
+	background-color: $color-grey-alpha2;
+	transition: all 0.2s ease;
+  }
+  &:hover {
+    .gallery-painting-name {
+      top: 2vw;
+	  opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gallery-painting-container {
+	width: 90vw;
+	margin-top: 100px;
+	.gallery-painting {
+	  width: 80vw;
+	  height: 80vw;
+	  padding: 8vw;
+	  .gallery-painting-name {
+		top: 6vw;
+		left: -8vw;
+		opacity: 1;
+	  }
+	}
+  }
+}
