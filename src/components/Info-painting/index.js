@@ -40,6 +40,7 @@ export default Vue.extend({
   ready() {
 
     this.addEventListeners();
+	this.image = this.$els.paintingimage;
     this.details = this.$els.paintingdetails.getElementsByClassName('details');
     this.createTransitionsTl();
   },
@@ -81,7 +82,7 @@ export default Vue.extend({
     onclickPrev() {
       this.fadeOutTl = new TimelineMax();
       this.fadeOutTl
-        .fromTo(this.$els.paintingimage, 0.5, {opacity: 1, y: 0}, {opacity: 0, y: -10, ease: Expo.easeOut}, 0.1)
+        .fromTo(this.image, 0.5, {opacity: 1, y: 0}, {opacity: 0, y: -10, ease: Expo.easeOut}, 0.1)
   		.staggerFromTo(this.details, 0.3, {opacity: 1, x: 0}, {opacity: 0, x: 20, ease: Expo.easeOut}, 0.1);
 
 	  setTimeout(()=> {
@@ -89,7 +90,7 @@ export default Vue.extend({
         this.currentPainting = contentData.paintings[this.currentId];
 		this.fadeInTl = new TimelineMax();
   	    this.fadeInTl
-  		  .fromTo(this.$els.paintingimage, 0.5, {opacity: 0, y: 10}, {opacity: 1, y:0, ease: Expo.easeOut}, 0.3)
+  		  .fromTo(this.image, 0.5, {opacity: 0, y: 10}, {opacity: 1, y:0, ease: Expo.easeOut}, 0.3)
   		  .staggerFromTo(this.details, 0.5, {opacity: 0, x: -20}, {opacity: 1, x:0, ease: Expo.easeOut}, 0.1);
 	  }, 1000);
 
@@ -99,7 +100,7 @@ export default Vue.extend({
 
 	  this.fadeOutTl = new TimelineMax();
       this.fadeOutTl
-    	.fromTo(this.$els.paintingimage, 0.5, {opacity: 1, y: 0}, {opacity: 0, y: -10, ease: Expo.easeOut}, 0.1)
+    	.fromTo(this.image, 0.5, {opacity: 1, y: 0}, {opacity: 0, y: -10, ease: Expo.easeOut}, 0.1)
     	.staggerFromTo(this.details, 0.3, {opacity: 1, x: 0}, {opacity: 0, x: 20, ease: Expo.easeOut}, 0.1);
 
   	  setTimeout(()=> {
@@ -107,7 +108,7 @@ export default Vue.extend({
         this.currentPainting = contentData.paintings[this.currentId];
   		this.fadeInTl = new TimelineMax();
     	this.fadeInTl
-    	  .fromTo(this.$els.paintingimage, 0.5, {opacity: 0, y: 10}, {opacity: 1, y:0, ease: Expo.easeOut}, 0.3)
+    	  .fromTo(this.image, 0.5, {opacity: 0, y: 10}, {opacity: 1, y:0, ease: Expo.easeOut}, 0.3)
     	  .staggerFromTo(this.details, 0.5, {opacity: 0, x: -20}, {opacity: 1, x:0, ease: Expo.easeOut}, 0.1);
   	  }, 1000);
 
